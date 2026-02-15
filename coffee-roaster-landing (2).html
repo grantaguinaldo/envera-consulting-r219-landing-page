@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The California Coffee Roaster Air Permitting Toolkit | Envera Consulting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --envera-green: #76A642;
+            --envera-green-dark: #5e8c32;
+            --envera-green-light: #8ab856;
+            --envera-green-dim: rgba(118, 166, 66, 0.12);
+            --envera-green-subtle: rgba(118, 166, 66, 0.06);
+            --slate-900: #0f172a;
+            --slate-800: #1e293b;
+            --slate-700: #334155;
+            --slate-600: #475569;
+            --slate-500: #64748b;
+            --slate-400: #94a3b8;
+            --slate-300: #cbd5e1;
+            --slate-200: #e2e8f0;
+            --slate-100: #f1f5f9;
+            --slate-50: #f8fafc;
+            --red-600: #dc2626;
+            --amber-600: #d97706;
+            --amber-50: #fffbeb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #ffffff;
+            color: var(--slate-700);
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        /* === HEADER === */
+        .header {
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--slate-200);
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 28px;
+        }
+
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.625rem 1.25rem;
+            background: var(--envera-green);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            border-radius: 6px;
+            transition: background 0.15s ease;
+        }
+
+        .header-cta:hover {
+            background: var(--envera-green-dark);
+        }
+
+        .header-cta svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* === HERO === */
+        .hero {
+            padding: 4.5rem 2rem 4rem;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 0.6875rem;
+            font-weight: 700;
+            color: var(--envera-green-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            background: var(--envera-green-dim);
+            padding: 0.375rem 0.875rem;
+            border-radius: 4px;
+            margin-bottom: 1.75rem;
+        }
+
+        .hero h1 {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+            line-height: 1.25;
+            color: var(--slate-900);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--envera-green-dark);
+        }
+
+        .hero-lead {
+            font-size: 1.1875rem;
+            color: var(--slate-600);
+            margin-bottom: 2rem;
+            line-height: 1.75;
+        }
+
+        /* === TOOLKIT PREVIEW === */
+        .toolkit-preview {
+            background: var(--slate-50);
+            border: 1px solid var(--slate-200);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .toolkit-cover {
+            background: linear-gradient(135deg, var(--slate-800) 0%, var(--slate-900) 100%);
+            border-radius: 6px;
+            padding: 1.25rem 1rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15), 0 2px 8px rgba(0,0,0,0.1);
+            transform: rotate(-2deg);
+        }
+
+        .toolkit-cover-label {
+            font-size: 0.5625rem;
+            font-weight: 700;
+            color: var(--envera-green-light);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .toolkit-cover-title {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        .toolkit-cover-meta {
+            font-size: 0.625rem;
+            color: var(--slate-400);
+        }
+
+        .toolkit-cover-pages {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+            margin-top: 0.75rem;
+            font-size: 0.625rem;
+            color: var(--slate-400);
+        }
+
+        .toolkit-cover-pages svg {
+            width: 12px;
+            height: 12px;
+            color: var(--envera-green-light);
+        }
+
+        .toolkit-details h3 {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--slate-900);
+            margin-bottom: 0.75rem;
+        }
+
+        .toolkit-details p {
+            font-size: 0.9375rem;
+            color: var(--slate-600);
+            margin-bottom: 1rem;
+            line-height: 1.65;
+        }
+
+        .toolkit-contents {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .toolkit-contents li {
+            font-size: 0.875rem;
+            color: var(--slate-700);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            border-bottom: 1px solid var(--slate-200);
+        }
+
+        .toolkit-contents li:last-child {
+            border-bottom: none;
+        }
+
+        .toolkit-contents li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--envera-green);
+            font-weight: 700;
+            font-size: 0.8125rem;
+        }
+
+        /* === FORM SECTION === */
+        .form-section {
+            background: var(--slate-900);
+            border-radius: 10px;
+            padding: 2.25rem;
+            margin: 2.5rem 0;
+        }
+
+        .form-section h3 {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 1.375rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-section p {
+            font-size: 0.9375rem;
+            color: var(--slate-400);
+            margin-bottom: 1.5rem;
+        }
+
+        .lead-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.375rem;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: var(--slate-300);
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--slate-700);
+            border-radius: 6px;
+            font-size: 0.9375rem;
+            color: #ffffff;
+            background: var(--slate-800);
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .form-group input::placeholder {
+            color: var(--slate-500);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--envera-green);
+            box-shadow: 0 0 0 3px rgba(118, 166, 66, 0.2);
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: var(--slate-800);
+        }
+
+        .form-submit {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.625rem;
+            padding: 1rem 2rem;
+            background: var(--envera-green);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            margin-top: 0.5rem;
+        }
+
+        .form-submit:hover {
+            background: var(--envera-green-light);
+            transform: translateY(-1px);
+        }
+
+        .form-submit svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .form-note {
+            grid-column: 1 / -1;
+            font-size: 0.75rem;
+            color: var(--slate-500);
+            text-align: center;
+            margin-top: 0.25rem;
+        }
+
+        /* === THE PROBLEM === */
+        .problem {
+            padding: 4rem 2rem;
+            max-width: 720px;
+            margin: 0 auto;
+            border-top: 1px solid var(--slate-200);
+        }
+
+        .section-label {
+            font-size: 0.6875rem;
+            font-weight: 700;
+            color: var(--slate-400);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+        }
+
+        .problem h2 {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--slate-900);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .problem p {
+            margin-bottom: 1.25rem;
+        }
+
+        .problem p strong {
+            color: var(--slate-900);
+        }
+
+        .stat-callout {
+            background: var(--amber-50);
+            border-left: 4px solid var(--amber-600);
+            padding: 1.25rem 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .stat-callout p {
+            margin: 0;
+            color: var(--slate-700);
+            font-size: 0.9375rem;
+        }
+
+        .stat-callout strong {
+            color: var(--slate-900);
+        }
+
+        .callout-source {
+            font-size: 0.8125rem;
+            color: var(--slate-500);
+            margin-top: 0.75rem;
+            margin-bottom: 0;
+        }
+
+        .callout-source a {
+            color: var(--slate-500);
+            text-decoration: underline;
+        }
+
+        .callout-source a:hover {
+            color: var(--slate-700);
+        }
+
+        /* === DISTRICTS TABLE === */
+        .districts {
+            padding: 4rem 2rem;
+            background: var(--slate-50);
+            border-top: 1px solid var(--slate-200);
+            border-bottom: 1px solid var(--slate-200);
+        }
+
+        .districts-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .districts h2 {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--slate-900);
+            margin-bottom: 0.75rem;
+            text-align: center;
+        }
+
+        .districts > .districts-inner > p {
+            text-align: center;
+            color: var(--slate-600);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .districts-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+
+        .districts-table th {
+            background: var(--slate-800);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 1rem 1.25rem;
+            text-align: left;
+        }
+
+        .districts-table td {
+            padding: 1rem 1.25rem;
+            font-size: 0.9375rem;
+            border-bottom: 1px solid var(--slate-200);
+            color: var(--slate-700);
+        }
+
+        .districts-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .districts-table .district-name {
+            font-weight: 600;
+            color: var(--slate-900);
+        }
+
+        .districts-table .threshold {
+            color: var(--envera-green-dark);
+            font-weight: 500;
+        }
+
+        .districts-note {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--slate-500);
+        }
+
+        /* === WHAT'S INSIDE === */
+        .whats-inside {
+            padding: 4rem 2rem;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .whats-inside h2 {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--slate-900);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .inside-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .inside-card {
+            background: var(--slate-50);
+            border: 1px solid var(--slate-200);
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+
+        .inside-card-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--envera-green-dim);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .inside-card-icon svg {
+            width: 20px;
+            height: 20px;
+            color: var(--envera-green-dark);
+        }
+
+        .inside-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--slate-900);
+            margin-bottom: 0.375rem;
+        }
+
+        .inside-card p {
+            font-size: 0.875rem;
+            color: var(--slate-600);
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* === WHO IT'S FOR === */
+        .audience {
+            padding: 4rem 2rem;
+            background: var(--slate-900);
+            color: #ffffff;
+        }
+
+        .audience-inner {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .audience h2 {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .audience-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .audience-item {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 1.25rem;
+        }
+
+        .audience-item h3 {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.25rem;
+        }
+
+        .audience-item p {
+            font-size: 0.8125rem;
+            color: var(--slate-400);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* === ABOUT === */
+        .about {
+            padding: 4rem 2rem;
+            max-width: 720px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--slate-200);
+        }
+
+        .about-inner {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .about-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-logo img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .about-content h3 {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--slate-900);
+            margin-bottom: 0.75rem;
+        }
+
+        .about-content p {
+            font-size: 0.9375rem;
+            color: var(--slate-600);
+            margin-bottom: 1rem;
+            line-height: 1.65;
+        }
+
+        .about-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* === FINAL CTA === */
+        .final-cta {
+            padding: 4rem 2rem;
+            background: var(--envera-green);
+            text-align: center;
+        }
+
+        .final-cta-inner {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            font-size: 1.0625rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 1.75rem;
+            line-height: 1.65;
+        }
+
+        .final-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.625rem;
+            padding: 1rem 2rem;
+            background: #ffffff;
+            color: var(--envera-green-dark);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 8px;
+            transition: all 0.15s ease;
+        }
+
+        .final-cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .final-cta-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            background: var(--slate-900);
+            color: var(--slate-400);
+            padding: 2.5rem 2rem;
+        }
+
+        .footer-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
+        .footer-brand img {
+            height: 24px;
+            opacity: 0.85;
+        }
+
+        .footer-text {
+            font-size: 0.8125rem;
+            line-height: 1.5;
+        }
+
+        .footer-text a {
+            color: var(--envera-green-light);
+            text-decoration: none;
+        }
+
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            font-size: 0.8125rem;
+            color: var(--slate-400);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.875rem;
+            }
+
+            .toolkit-preview {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .toolkit-cover {
+                max-width: 160px;
+                margin: 0 auto;
+                transform: rotate(0);
+            }
+
+            .lead-form {
+                grid-template-columns: 1fr;
+            }
+
+            .inside-grid,
+            .audience-list {
+                grid-template-columns: 1fr;
+            }
+
+            .districts-table {
+                font-size: 0.8125rem;
+            }
+
+            .districts-table th,
+            .districts-table td {
+                padding: 0.75rem 1rem;
+            }
+
+            .about-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-logo {
+                max-width: 120px;
+                margin: 0 auto;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .footer-brand {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="https://enveraconsulting.com" class="logo" target="_blank">
+                <img src="https://enveraconsulting.com/wp-content/uploads/2015/09/EnveraConsulting-360x60.png" alt="Envera Consulting">
+            </a>
+            <a href="#get-toolkit" class="header-cta">
+                Get the Free Toolkit
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <span class="hero-label">Free 12-Page Guide</span>
+        <h1>Installing a coffee roaster in California? <em>Read this first.</em></h1>
+        <p class="hero-lead">California has 35 air districts, each with different permitting thresholds. Some require permits for roasters over 5 lbs. Others exempt roasters under 15 kg. Get it wrong, and you're looking at 3–6 months of delays, retrofits, or worse—operating without a permit and facing enforcement.</p>
+
+        <!-- TOOLKIT PREVIEW -->
+        <div class="toolkit-preview">
+            <div class="toolkit-cover">
+                <div class="toolkit-cover-label">Envera Consulting</div>
+                <div class="toolkit-cover-title">The California Coffee Roaster Air Permitting Toolkit</div>
+                <div class="toolkit-cover-meta">Grant T. Aguinaldo, PhD</div>
+                <div class="toolkit-cover-pages">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    12 pages • PDF
+                </div>
+            </div>
+            <div class="toolkit-details">
+                <h3>What's in the Toolkit:</h3>
+                <p>A practical reference that distills complex, district-specific requirements into clear guidance for roasters, engineers, and project planners.</p>
+                <ul class="toolkit-contents">
+                    <li>Permit thresholds for 6 major California air districts</li>
+                    <li>NOₓ emission limits by district (burner requirements)</li>
+                    <li>When exemptions apply—and when they don't</li>
+                    <li>Afterburner design standards and requirements</li>
+                    <li>Typical permitting timelines and compliance steps</li>
+                    <li>How to coordinate air permits with building permits</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- LEAD FORM -->
+        <div class="form-section" id="get-toolkit">
+            <h3>Get Your Free Copy</h3>
+            <p>Enter your details below. We'll email you the toolkit immediately.</p>
+            <form class="lead-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Jane" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Smith" required>
+                </div>
+                <div class="form-group full-width">
+                    <label for="email">Work Email</label>
+                    <input type="email" id="email" name="email" placeholder="jane@company.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company" placeholder="Your company name">
+                </div>
+                <div class="form-group">
+                    <label for="role">Your Role</label>
+                    <select id="role" name="role">
+                        <option value="">Select your role</option>
+                        <option value="owner">Roastery Owner/Operator</option>
+                        <option value="ehs">EHS/Environmental Manager</option>
+                        <option value="engineer">Facility Engineer</option>
+                        <option value="consultant">Environmental Consultant</option>
+                        <option value="contractor">Contractor/Installer</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="form-submit">
+                    Send Me the Toolkit
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </button>
+                <p class="form-note">No spam. Your information stays with us. Unsubscribe anytime.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- THE PROBLEM -->
+    <section class="problem">
+        <div class="section-label">Why This Matters</div>
+        <h2>Most roasters discover permit requirements <em>after</em> they've already bought the equipment.</h2>
+        <p>You find the perfect space. You order a beautiful 15kg roaster. The building inspector asks for your air permit. You call the air district. They tell you the permit takes 3–6 months. Your landlord is charging rent. Your equipment is sitting in crates. Your opening date just moved to next quarter.</p>
+        <p>Or worse: you start roasting without a permit, hoping no one notices. The district eventually catches up with you. Now you're applying for a permit <em>after installation</em>—which means your equipment gets evaluated against <strong>today's</strong> emission standards, not the standards that existed when you bought it.</p>
+        
+        <div class="stat-callout">
+            <p><strong>The air permit must be issued before installation or delivery to stay compliant.</strong> Starting operations early can result in violations, penalties, and potential permit denial. SCAQMD is currently evaluating permit denials for facilities that bypassed pre-construction review.</p>
+            <p class="callout-source">Source: <a href="https://www.aqmd.gov/docs/default-source/agendas/pstf/pstf_dec25_121025.pdf" target="_blank">SCAQMD Permit Streamlining Task Force, December 2025</a></p>
+        </div>
+
+        <p>This isn't theoretical. We've seen it happen to roasters who did everything else right—found a great location, invested in quality equipment, built a loyal customer base—only to face months of delays and thousands in unexpected costs because they didn't understand California's air permitting requirements upfront.</p>
+        <p><strong>That's why we created this toolkit.</strong></p>
+    </section>
+
+    <!-- DISTRICTS TABLE -->
+    <section class="districts">
+        <div class="districts-inner">
+            <h2>Permit thresholds vary dramatically by district.</h2>
+            <p>Here's a preview of what's in the toolkit. Your requirements depend entirely on where you're located.</p>
+            <table class="districts-table">
+                <thead>
+                    <tr>
+                        <th>Air District</th>
+                        <th>Permit Threshold</th>
+                        <th>NOₓ Limit (Burner)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="district-name">SCAQMD (Los Angeles)</td>
+                        <td class="threshold">> 15 kg capacity</td>
+                        <td>30 ppm @ 3% O₂</td>
+                    </tr>
+                    <tr>
+                        <td class="district-name">BAAQMD (Bay Area)</td>
+                        <td class="threshold">> 15 kg capacity</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td class="district-name">SDAPCD (San Diego)</td>
+                        <td class="threshold">> 5 kg capacity</td>
+                        <td>Depends on BACT</td>
+                    </tr>
+                    <tr>
+                        <td class="district-name">MBARD (Monterey Bay)</td>
+                        <td class="threshold">> 5 lb capacity</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td class="district-name">SMAQMD (Sacramento)</td>
+                        <td class="threshold">> 12 lb drum / > 18 lb fluid bed</td>
+                        <td>Depends on BACT</td>
+                    </tr>
+                    <tr>
+                        <td class="district-name">SJVAPCD (Central Valley)</td>
+                        <td class="threshold">< 2 lb/day emissions</td>
+                        <td>Depends on BACT</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="districts-note">The full toolkit includes additional districts, afterburner requirements, and exemption criteria.</p>
+        </div>
+    </section>
+
+    <!-- WHAT'S INSIDE -->
+    <section class="whats-inside">
+        <h2>Everything you need to plan your installation</h2>
+        <div class="inside-grid">
+            <div class="inside-card">
+                <div class="inside-card-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                </div>
+                <h3>Exemption Criteria</h3>
+                <p>When your roaster qualifies for an exemption—and what documentation you need to prove it during an inspection.</p>
+            </div>
+            <div class="inside-card">
+                <div class="inside-card-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <h3>Permitting Timeline</h3>
+                <p>Realistic expectations for how long the process takes—and what you can do to avoid delays.</p>
+            </div>
+            <div class="inside-card">
+                <div class="inside-card-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg>
+                </div>
+                <h3>Afterburner Requirements</h3>
+                <p>When you need one, design standards (residence time, temperature), and how to permit it alongside your roaster.</p>
+            </div>
+            <div class="inside-card">
+                <div class="inside-card-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                </div>
+                <h3>Building Permit Coordination</h3>
+                <p>How air permits and building permits interact—and how to keep both workstreams moving in parallel.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO IT'S FOR -->
+    <section class="audience">
+        <div class="audience-inner">
+            <h2>Who this toolkit is for</h2>
+            <div class="audience-list">
+                <div class="audience-item">
+                    <h3>Roastery Owners</h3>
+                    <p>Planning your first installation or expanding to a new location. Know what's required before you sign the lease.</p>
+                </div>
+                <div class="audience-item">
+                    <h3>EHS Managers</h3>
+                    <p>Managing compliance for coffee operations. Quick reference for permit thresholds and exemption criteria.</p>
+                </div>
+                <div class="audience-item">
+                    <h3>Facility Engineers</h3>
+                    <p>Specifying equipment for new projects. Understand emission requirements before finalizing equipment selection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about">
+        <div class="about-inner">
+            <div class="about-logo">
+                <img src="https://enveraconsulting.com/wp-content/uploads/2026/02/Envera-Consulting-Square-Logo.png" alt="Envera Consulting">
+            </div>
+            <div class="about-content">
+                <h3>About Envera Consulting</h3>
+                <p>For more than a decade, Envera Consulting has helped California-based manufacturing facilities—including coffee roasters—plan, permit, and operate within one of the most highly regulated air quality environments in the country.</p>
+                <p>From small-batch roasters to large-scale production facilities, we help clients understand, achieve, and maintain compliance with California's complex web of air permitting, emission control, and environmental reporting requirements.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="final-cta-inner">
+            <h2>Know before you install.</h2>
+            <p>Understanding your requirements before you purchase saves time, money, and headaches. Get the toolkit and start planning your installation with confidence.</p>
+            <a href="#get-toolkit" class="final-cta-btn">
+                Get the Free Toolkit
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="https://enveraconsulting.com/wp-content/uploads/2015/09/EnveraConsulting-360x60.png" alt="Envera Consulting">
+                <p class="footer-text">© 2026 <a href="https://enveraconsulting.com" target="_blank">Envera Consulting</a>. All rights reserved.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://enveraconsulting.com" target="_blank">Consulting Services</a>
+                <a href="mailto:info@enveraconsulting.com">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
